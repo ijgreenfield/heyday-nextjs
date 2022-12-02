@@ -1,18 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
-body {
+body, * {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Maison Neue Book';
+  font-weight: 400;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Playfair Display';
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 2.875rem;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
