@@ -7,7 +7,6 @@ export default function ProductTemplate({ product, responseData }) {
     return (
         <div className="">
             <div>
-                <p>{product.title}</p>
             </div>
             {/* How We Use It */}
             <div className="bg-[#FDFAF8] py-20">
@@ -15,6 +14,7 @@ export default function ProductTemplate({ product, responseData }) {
                     <div className="w-full h-full">
                         <Image 
                             src="https://cdn.shopify.com/s/files/1/1704/8471/files/HowTo_Serum01_f66f7197-eb52-4d62-a719-6ceb42ab4ed2_588x.gif?v=1613750352"
+                            alt="alt text"
                             width={500}
                             height={600}
                         />  
@@ -99,7 +99,7 @@ const gql = String.raw
 export async function getStaticPaths() {
     const { data } = await storefront(gql`
         {
-            products(first: 10) {
+            products(first: 1000) {
                 edges {
                     node {
                         handle

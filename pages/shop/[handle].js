@@ -4,7 +4,6 @@ import Container from "../../components/Container";
 import Head from "next/head";
 
 export default function CollectionTemplate({ collection }) {
-    console.log(collection)
     return (
         <div>
             <Head>
@@ -13,10 +12,11 @@ export default function CollectionTemplate({ collection }) {
             <Container>
                 <div className="grid grid-cols-4 gap-8">
                     {collection.products.edges.map((col) => {
-                        const product = col.node
+                        const product = col.node;
 
                         return (
-                            <ProductCard product={product} key={product.handle}/>
+                            //<ProductCard product={product} key={product.handle}/>
+                            <p>{product.title}</p>
                         )
                     })}
                 </div>
@@ -63,24 +63,24 @@ const singleCollectionQuery = gql`
             products(first: 10){
               edges {
                 node {
-                  title
-                  vendor
-                  handle
-                  priceRange {
-                    minVariantPrice {
-                      amount
+                    title
+                    vendor
+                    handle
+                    priceRange {
+                        minVariantPrice {
+                        amount
+                        }
+                        maxVariantPrice {
+                        amount
+                        }
                     }
-                    maxVariantPrice {
-                      amount
+                    images(first: 1) {
+                        edges {
+                        node {
+                            url
+                        }
+                        }
                     }
-                  }
-                  images(first: 1) {
-                    edges {
-                      node {
-                        url
-                      }
-                    }
-                  }
                 }
               }
             }
