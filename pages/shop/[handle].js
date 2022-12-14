@@ -59,7 +59,7 @@ const singleCollectionQuery = gql`
         collectionByHandle(handle: $handle) {
             title
             description
-            products(first: 10){
+            products(first: 100){
               edges {
                 node {
                   title
