@@ -6,6 +6,9 @@ export default function ProductTemplate({ product, responseData }) {
     //const product_id = product.id.split('Product/')[1]
     return (
         <div className="">
+            <div>
+                <p>{product.title}</p>
+            </div>
             {/* How We Use It */}
             <div className="bg-[#FDFAF8] py-20">
                 <div className="flex mx-auto max-w-6xl">
@@ -96,7 +99,7 @@ const gql = String.raw
 export async function getStaticPaths() {
     const { data } = await storefront(gql`
         {
-            products(first: 1000) {
+            products(first: 10) {
                 edges {
                     node {
                         handle
