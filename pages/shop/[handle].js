@@ -1,5 +1,4 @@
-import {storefront} from "../../utils";
-import ProductCard from "../../components/Products/productCard";
+import { storefront } from "../../utils";
 import Container from "../../components/Container";
 import Head from "next/head";
 
@@ -11,14 +10,14 @@ export default function CollectionTemplate({ collection }) {
             </Head>
             <Container>
                 <div className="grid grid-cols-4 gap-8">
-                    {collection.products.edges.map((col) => {
+                    {/*{collection.products.edges.map((col) => {
                         const product = col.node;
 
                         return (
                             //<ProductCard product={product} key={product.handle}/>
                             <p key={product.title}>{product.title}</p>
                         )
-                    })}
+                    })}*/}
                 </div>
             </Container>
         </div>

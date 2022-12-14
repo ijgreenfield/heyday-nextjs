@@ -7,6 +7,7 @@ export default function ProductTemplate({ product, responseData }) {
     return (
         <div className="">
             <div>
+                {product.title}
             </div>
             {/* How We Use It */}
             <div className="bg-[#FDFAF8] py-20">
