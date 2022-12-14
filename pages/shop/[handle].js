@@ -25,12 +25,10 @@ export default function CollectionTemplate({ collection }) {
     )
 }
 
-const gql = String.raw
-
 export async function getStaticPaths() {
-    const { data } = await storefront(gql`
+    const { data } = await storefront(`
         {
-            collections(first: 100) {
+            collections(first: 150) {
                 edges {
                     node {
                         handle
@@ -55,12 +53,12 @@ export async function getStaticProps({ params }) {
     }
 }
 
-const singleCollectionQuery = gql`
+const singleCollectionQuery = `
     query SingleCollection($handle: String!) {
         collectionByHandle(handle: $handle) {
             title
             description
-            products(first: 10){
+            products(first: 50){
               edges {
                 node {
                     title
