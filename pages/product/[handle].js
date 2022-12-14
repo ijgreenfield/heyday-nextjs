@@ -115,15 +115,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const { data } = await storefront(singleProductQuery, { handle: params.handle })
-    const response  = await fetch(`https://api-cdn.yotpo.com/v1/widget/7DTLUDTEEN8jf5H5TWwLgyTY60lTruCBgm2HJk7s/products/4773568938072/reviews.json`)
+    const { data } = await storefront(singleProductQuery, { handle: params.handle });
+    const product = data.productByHandle;
+    const response  = await fetch('https://api-cdn.yotpo.com/v1/widget/7DTLUDTEEN8jf5H5TWwLgyTY60lTruCBgm2HJk7s/products/4773568938072/reviews.json');
     const responseData = await response.json();
-    const product = data.productByHandle
     return {
-        props: {
-            product,
-            responseData
-        }
+        props: { product, responseData }
     }
 }
 
