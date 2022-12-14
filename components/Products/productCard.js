@@ -15,7 +15,7 @@ export default function ProductCard({ product }) {
                         alt={image.altText}
                     />
                 </div>
-                <p className="uppercase text-xs tracking-wider mt-3 font-light font-maison">{product.vendor}</p>
+                <p className="uppercase text-xs tracking-widest mt-3 font-light font-maison">{product.vendor}</p>
                 <h2 className="mt-2 h-16 font-maison font-normal">{product.title}</h2>
                 <div>
                     <button className="border border-black w-full py-3 font-maison text-sm font-light hover:bg-accent-primary hover:text-white">Add to Cart - ${product.priceRange.minVariantPrice.amount}</button>
