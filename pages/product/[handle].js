@@ -1,4 +1,4 @@
-import { storefront } from "../../utils";
+import { storefront, storefrontBulk } from "../../utils";
 import StarRatings from "react-star-ratings";
 import Image from "next/image";
 
@@ -98,8 +98,8 @@ export default function ProductTemplate({ product, responseData }) {
 
 export async function getStaticPaths() {
     const { data } = await storefront(`
-        {
-            products(first: 376) {
+        query {
+            products(first: 250) {
                 edges {
                     node {
                         handle
