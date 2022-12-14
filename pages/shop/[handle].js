@@ -16,7 +16,7 @@ export default function CollectionTemplate({ collection }) {
 
                         return (
                             //<ProductCard product={product} key={product.handle}/>
-                            <p>{product.title}</p>
+                            <p key={product.title}>{product.title}</p>
                         )
                     })}
                 </div>
