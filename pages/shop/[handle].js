@@ -4,6 +4,7 @@ import Container from "../../components/Container";
 import Head from "next/head";
 
 export default function CollectionTemplate({ collection }) {
+    console.log(collection)
     return (
         <div>
             <Head>
@@ -59,7 +60,7 @@ const singleCollectionQuery = gql`
         collectionByHandle(handle: $handle) {
             title
             description
-            products(first: 100){
+            products(first: 10){
               edges {
                 node {
                   title

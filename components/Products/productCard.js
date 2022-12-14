@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image"
 
 export default function ProductCard({ product }) {
-    const image = product.images.edges[0].node;
+    const image = product.images.edges[0].node
 
     return (
         <Link href={`/product/${product.handle}`}>
