@@ -99,7 +99,7 @@ export default function ProductTemplate({ product, responseData }) {
 export async function getStaticPaths() {
     const { data } = await storefront(`
         {
-            products(first: 10) {
+            products(first: 250) {
                 edges {
                     node {
                         handle
