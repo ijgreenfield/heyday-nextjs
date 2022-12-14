@@ -3,7 +3,7 @@ import StarRatings from "react-star-ratings";
 import Image from "next/image";
 
 export default function ProductTemplate({ product, responseData }) {
-    //const product_id = product.id.split('Product/')[1]
+
     return (
         <div className="">
             <div>
