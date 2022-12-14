@@ -94,10 +94,9 @@ export default function ProductTemplate({ product, responseData }) {
     )
 }
 
-const gql = String.raw
 
 export async function getStaticPaths() {
-    const { data } = await storefront(gql`
+    const { data } = await storefront(`
         {
             products(first: 1000) {
                 edges {
@@ -127,7 +126,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-const singleProductQuery = gql`
+const singleProductQuery = `
     query SingleProduct($handle: String!) {
       productByHandle(handle: $handle) {
         id
